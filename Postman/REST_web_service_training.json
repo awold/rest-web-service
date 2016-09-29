@@ -310,9 +310,11 @@
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"Name\": \"Nerds\",\n    \"Price\": 3.50,\n    \"Quantity\": 0\n}"
-						},
+    "Username": "Bryan",
+    "Password": "360",
+    "Balance": 0
+}
+,
 						"description": ""
 					},
 					"response": []
