@@ -25,8 +25,7 @@ namespace TuscService.Controllers
         [Route("products")]
         public IEnumerable<Product> GetProductsWithStock(bool hasStock)
         {
-            // TODO
-            return null;
+            return DataManager.GetProducts().Where(p => hasStock ? p.Quantity > 0 : p.Quantity == 0);
         }
 
         // GET api/products/5
