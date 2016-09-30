@@ -51,14 +51,6 @@ namespace TuscService.Controllers
             DataManager.DeleteUser(id);
         }
 
-        // GET/transactions
-        [HttpGet]
-        [Route("transactions")]
-        public List<Transaction> GetTransactionWithUser()
-        {
-            return DataManager.GetTransactions();
-        }
-
         // GET api/users?sortBalance=ASC|DESC
         [HttpGet]
         [Route("users")]
