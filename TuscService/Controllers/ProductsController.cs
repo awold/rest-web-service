@@ -19,22 +19,24 @@ namespace TuscService.Controllers
         {
             return DataManager.GetProducts();
         }
-
-        // GET api/products?hasStock=true
-        [HttpGet]
-        [Route("products")]
-        public IEnumerable<Product> GetProductsWithStock(bool hasStock)
-        {
-            // TODO
-            return null;
-        }
-
+       
         // GET api/products/5
         [HttpGet]
         [Route("products/{id}")]
         public Product Get(int id)
         {
             return DataManager.GetProducts().Where(p => p.Id == id).FirstOrDefault();
+        }
+
+        // GET api/products?={true|false}
+        [HttpGet]
+        [Route("products")]
+        public IEnumerable<Product> GetProductsWithStock(bool hasStock)
+        {
+            if (hasStock)
+                return DataManager.GetProducts().Where(p => p.Quantity > 0);
+            else
+                return DataManager.GetProducts().Where(p => p.Quantity == 0);
         }
 
         // POST api/products
