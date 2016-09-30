@@ -311,7 +311,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"Username\": \"Bryan\",\n    \"Password\": \"360\",\n    \"Balance\": 9001\n}"
+							"raw": "{\n\t\"Username\": \"Bryan\",\n    \"Password\": \"360\",\n    \"Balance\": 0\n}"
 						},
 						"description": ""
 					},
