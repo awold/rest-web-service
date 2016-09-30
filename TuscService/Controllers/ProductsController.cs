@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Routing;
 
 using TuscData;
 
@@ -25,8 +22,7 @@ namespace TuscService.Controllers
         [Route("products")]
         public IEnumerable<Product> GetProductsWithStock(bool hasStock)
         {
-            // TODO
-            return null;
+            return hasStock ? DataManager.GetProducts().Where(p => p.Quantity > 0) : DataManager.GetProducts().Where(p => p.Quantity == 0);
         }
 
         // GET api/products/5
@@ -34,7 +30,7 @@ namespace TuscService.Controllers
         [Route("products/{id}")]
         public Product Get(int id)
         {
-            return DataManager.GetProducts().Where(p => p.Id == id).FirstOrDefault();
+            return DataManager.GetProducts().FirstOrDefault(p => p.Id == id);
         }
 
         // POST api/products
